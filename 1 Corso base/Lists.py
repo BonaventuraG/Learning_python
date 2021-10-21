@@ -57,19 +57,26 @@ print(id(stuff),id(copy_2))
 # se cambia un elemento della sottolista, la 
 # sottolista non ha copia -->
 
-print(id(stuff[6]),id(copy_2[6]))
+print('indirizzi sottoliste')
+print(id(stuff[6]),id(copy_2[6]),'sono uguali')
 
 #con la deepcopy si creano oggetti completamente indipendenti
 import copy
 
 deepcopy_2= copy.deepcopy(stuff)
-
+print('\ndeepcopy: ora gli indirizzi delle sottolista sono diversi')
 print(id(stuff[6]))
 print(id(deepcopy_2[6]))
 
 #________________________________________________________
 ## Combining lists
-
+print('combining list')
+print(copy_1)
+print(id(copy_1))
 copy_1 = copy_1 + ["accio"]
+print(copy_1)
+print(id(copy_1))
 copy_1.append("oneino")
-print(stuff + copy_1)
+print(copy_1)
+print(id(copy_1))
+

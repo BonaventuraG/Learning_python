@@ -4,16 +4,17 @@
 # le liste sono oggetti. Ci sono metodi
 
 healthy =['pineapple','tomatoes','vegetables','fruit']
-backpack =['pizza', 'nutella', 'pineapple', 'beer','cocacola']
 
 healthy.append('water')
 
 print(healthy)
+print('fruit is in healty?'+'fruit' in healthy)
 
-print('fruit' in healthy)
-
+backpack =['pizza', 'nutella', 'pineapple', 'beer','cocacola']
+print(id(backpack),' ',backpack)
 backpack.remove('pizza')
-print(backpack)
+print("->backpack.remove('pizza')<-")
+print(id(backpack),' ',backpack)
 
 #________________________________________
 ## List comprehension
@@ -50,3 +51,4 @@ print('\nlen and count\n')
 print(len(backpack), ' ', backpack[len(backpack)-1])
 
 print(backpack.count('water')) #how many water in backpack
+

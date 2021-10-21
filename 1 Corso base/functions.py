@@ -1,6 +1,6 @@
 ### FUNCTIONS
 
-def greet(nome='invitato', cognome='Esposito'): #default parameter = 'invitato'
+def greet(nome='Gennaro', cognome='Esposito'): #default parameter = 'Gennaro'
     if nome == 'Nello':
         print('who are you?')
         return False  ##return brakes the function
@@ -31,13 +31,13 @@ for i in range(len(invitati)):
 # lo slash avrebbe impedito il passaggio di parametri
 # per nome. A quel punto si era costretti a passarli per 
 # posizione. Tutto ciò che è PRIMA di ,/ sarà un
-# parametro posizionale. Tutto ciò che è DOPO un ,*
+# parametro posizionale. Tutto ciò che è DOPO un ,*,
 # potrà essere passato solo per nome
 
 #________________________________________________
 ## Unlimited arguments
 
-def greet_all(*people): #questo * è diverso da ,*
+def greet_all(*people): #questo * è diverso da ,*,
     for person in people:
         print('Hi ' + person, end=' ')
     print()

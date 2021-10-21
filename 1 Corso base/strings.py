@@ -37,7 +37,7 @@ print(msg5)
 
 #_______________________________________
 ##Multiline strings
-very_long_string = """aaaaaaaaa \ 
+very_long_string = """aaaaaaaaa \
 aaaaa
 bbbbbbbbbbbbbbbbbbbbbb
 ccccccccccccccccccc"""

@@ -46,8 +46,10 @@ if name=="Bonaventura" or name=="Brunello":
 else:
     print("you're not allowed")
 
-bool_2=True
-if not bool_2 or print("It is false"): #non dà errore. Se la prima condizione è falsa, passa oltre e invoca la funzione (che se non è un booleano lascia il valore a falso)
+bool_2=False
+if bool_2 or print("It is false"): #non dà errore. 
+    #Se la prima condizione è falsa, passa oltre e invoca la funzione posta dopo or 
+    # (se la funzione non restituisce un booleano lascia il valore a falso)
     print("It is true")
 
 
