@@ -1,4 +1,4 @@
-#from 44.31 to
+#from 44.31 to 2.00.11
 
 #>>>>>>>>>>> INSERT & REMOVE <<<<<<<<<<<
 
@@ -78,8 +78,78 @@ print(data_reversed)
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Miglior modo manuale
 
-print(data_reversed[::2])
+print(data_reversed[::2])  #slicing
 print(data_reversed[::-1]) #così stampa solo al contrario
 
 data_reversed[:]=data_reversed[::-1]
 print(data_reversed) #così la lista viene effettivamente invertita
+
+#_________________________________________________________________________________________________
+#*************************************************************************************************
+## Sort Lists
+
+print(id(workdays))
+workdays=['Lunedì','Martedì','Mercoledì','Giovedì','Venerdì'] #riassegnazione del simbolo ad un oggetto: cambia l'id
+print(id(workdays))
+print('sorted function',sorted(workdays)) #sorted crea una copia
+print(id(workdays),workdays) #l'originale non è cambiato
+workdays.sort()
+print(id(workdays))  #nessuno dei due metodi cambia l'oggetto lista
+print(workdays)
+
+data=[-1 , 32, 4, 56, 33, 3, 2]
+
+print(sorted(data, reverse=True)) #si può anche usare .sort() e poi .reverse()
+
+strings=['a','A','abc', 'ABC', 'aBc', 'aBC', 'Abc']
+strings.sort()
+print(strings)
+
+strings=['a','A','abc', 'ABC', 'aBc', 'aBC', 'Abc']
+strings.sort(key=str.lower)
+print(strings)
+
+strings[:]=['a','aaaa','aa','AAA','Hello','b','a']
+
+strings.sort(key=len)
+print(strings)
+
+data=[1, 32, 4, 56, 31, 3, 2, 5, 11, 101]
+data.sort(key=str) #ordinare numeri come se fossero stringhe
+print(data)
+
+stuff=[True,23,10,77,0,'12','5','66',3.33,'3.14',5<0,0]
+stuff.sort(key=float)
+print(stuff)
+
+#_________________________________________________________________________________________________
+#*************************************************************************************************
+## Split strings
+
+msg="Alta sui naufragi Dai belvedere delle torri"
+words=msg.split()
+print(words)
+print(msg) #la stringa non viene cancellata (nè modificata)
+
+msg="China e distante- sugli elementi del disastro"
+words=msg.split('- ')
+print(words)
+
+msg='''Dalle cose che accadono al di sopra delle parole
+Celebrative del nulla
+Lungo un facile vento
+Di sazietà di impunità'''
+
+words=msg.split('\n')
+print(words)
+
+#_________________________________________________________________________________________________
+#*************************************************************************************************
+## User input (boring)
+
+#print('insert a string')
+#myin=input()
+
+#list4=myin.split
+#print(list4)
+
