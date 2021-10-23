@@ -94,8 +94,8 @@ print(id(workdays))
 print('sorted function',sorted(workdays)) #sorted crea una copia
 print(id(workdays),workdays) #l'originale non è cambiato
 workdays.sort()
-print(id(workdays))  #nessuno dei due metodi cambia l'oggetto lista
-print(workdays)
+print(id(workdays))  #nessuno dei due metodi l'id dell'oggetto lista
+print(workdays)      # ma sort agisce sull'oggetto originale
 
 data=[-1 , 32, 4, 56, 33, 3, 2]
 
