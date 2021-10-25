@@ -28,23 +28,28 @@ print(randint(0,10)) #avendo importato esplicitamente questo metodo, è possibil
 #______________________________________________________________________________________________________________________
 #**********************************************************************************************************************
 ## Creating a Module 
-
+print("CREA UN MODULO")
 import my_module
 
 '''
-def my_method():
+def my_method(list,list2,var):
     print(var,end=' ')
     var+=1
     print(var)
     list.append(var)
-    print(list)
+    list2=[0,0,0]
+    print(id(list2))
     return 0
 '''
 list1=[0,1,2,3]
+list2=[2,2,2]
 var=3
-print(id(list1),id(var))
-print(my_module.my_method(list1,var))
-print(list1,id(list1),var,id(var))
+
+print(id(list1),id(list2),id(var))
+
+print(my_module.my_method(list1,list2,var))
+
+print(list1,id(list1),list2,id(list2),var,id(var))
 #______________________________________________________________________________________________________________________
 #**********************************************************************************************************************
 ## Sys module
