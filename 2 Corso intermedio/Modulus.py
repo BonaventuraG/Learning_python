@@ -33,11 +33,18 @@ import my_module
 
 '''
 def my_method():
+    print(var,end=' ')
+    var+=1
+    print(var)
+    list.append(var)
+    print(list)
     return 0
 '''
-
-print(my_module.my_method())
-
+list1=[0,1,2,3]
+var=3
+print(id(list1),id(var))
+print(my_module.my_method(list1,var))
+print(list1,id(list1),var,id(var))
 #______________________________________________________________________________________________________________________
 #**********************************************************************************************************************
 ## Sys module
