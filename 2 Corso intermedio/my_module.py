@@ -6,3 +6,5 @@ def my_method(list,list2,var):
     list2=[0,0,0]
     print(id(list2))
     return 0
+
+print('my_method called')

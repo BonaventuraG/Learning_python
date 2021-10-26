@@ -20,3 +20,8 @@ from collections import Counter
 
 print(Counter(napoli_list)) #ha costruito un dizionario
 
+#>>>>>>>>>>>>>> TUPLE <<<<<<<<<<<<<<<#
+
+books=[('a',1),('b',2),('c',3),('a',2)]
+print(books[1][0])
+print(books[0]==books[3])
