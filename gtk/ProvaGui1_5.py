@@ -9,8 +9,8 @@ import os
 
 '''-------------------------------'''
 
-class ProvaGui:
-
+class ProvaGui1_5:
+    
     def __init__(self):
 
         '''__init__Directories setup'''
@@ -22,22 +22,23 @@ class ProvaGui:
 
         '''__init__GTK setup'''
 
-        gladefile= folder+'\ProvaGui.glade'
-        self.builder=Gtk.Builder()
+        gladefile= folder+'\ProvaGui1_5.glade'
+        self.builder = Gtk.Builder()
         self.builder.add_from_file(gladefile)  #carica l'interfaccia dal file all'indirizzo
-                   
+        self.builder.connect_signals(self)
 
-        button_1= self.builder.get_object('button_1')
-        button_1.connect('clicked', self.printText)
-
-        finestra= self.builder.get_object('MainW')
+        finestra = self.builder.get_object('MainW')
         finestra.show()
         finestra.connect('destroy', Gtk.main_quit)
-        
 
     def printText(self, widget):
-        print('hello world')
+        entryInput = self.builder.get_object('toPrintEntry')
+        text       = entryInput.get_text().strip()
+        print(text)
+        entryInput.set_text('Enter a text')
+
+
 
 if __name__ == '__main__':
-    main = ProvaGui()
+    main = ProvaGui1_5()
     Gtk.main()

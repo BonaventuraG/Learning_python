@@ -1,6 +1,21 @@
 import sqlite3
 from book import Book
 
+''' LIST OF FUNCTIONS
+
+# cursor():                                 # crea un cursore
+# add_book(book:Book):                      # ritorna il numero di riga del libro aggiunto
+# get_books():                              # ritorna una lista di tuple                      
+# add_new_book(book:Book):                  # aggiunge un libro solo se non ce ne sono uguali
+# get_bookobj_list():                       # ritorna una lista di oggetti libri
+# delete_book_by_title(title:str):          # cancella tutti i libri col titolo title 
+# delete_duplicates():                      # cancella tutti i duplicati nel database
+# get_book_by_title(title:str)              # ritorna il (primo) libro (tupla) col titolo indicato
+# get_bookobj_by_title(title:str):          # ritorna un oggetto libro ricavato dal DB in base al titolo
+# update_book()
+
+'''
+
 def cursor():
     return sqlite3.connect('books.db').cursor()
 
@@ -48,7 +63,7 @@ def get_bookobj_list(): #crea una lista di oggetti libro
     c.connection.close()
     return booklist
 
-def delete_book_by_title(title):
+def delete_book_by_title(title:str):
     c=cursor()
     with c.connection:
         c.execute('DELETE FROM books WHERE title=?',(title,))
@@ -95,3 +110,12 @@ def get_bookobj_by_title(title:str):
        return None
 
     return Book(data[0],data[1]) 
+
+
+def update_book(book:Book, new_title:str, new_pages:int):
+    c=cursor()
+    with c.connection:
+        c.execute('''UPDATE books SET title=?, SET pages=? WHERE title=? AND pages=?''', 
+                    (new_title, new_pages, book.title, book.pages) )
+        
+    c.connection.close()
